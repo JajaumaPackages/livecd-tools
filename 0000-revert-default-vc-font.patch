@@ -1,0 +1,12 @@
+diff -uNr livecd-tools-23.2.orig/imgcreate/kickstart.py livecd-tools-23.2/imgcreate/kickstart.py
+--- livecd-tools-23.2.orig/imgcreate/kickstart.py	2016-02-25 15:09:30.697302798 +0300
++++ livecd-tools-23.2/imgcreate/kickstart.py	2016-02-25 15:12:12.517593590 +0300
+@@ -140,7 +140,7 @@
+     """A class to apply a kickstart keyboard configuration to a system."""
+     def apply(self, kskeyboard):
+         vcconf_file = self.path("/etc/vconsole.conf")
+-        DEFAULT_VC_FONT = "eurlatgr"
++        DEFAULT_VC_FONT = "latarcyrheb-sun16"
+ 
+         if not kskeyboard.keyboard:
+             kskeyboard.keyboard = "us"

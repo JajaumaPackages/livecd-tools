@@ -1,0 +1,20 @@
+diff -uNr livecd-tools-livecd-tools-23.4.orig/imgcreate/kickstart.py livecd-tools-livecd-tools-23.4/imgcreate/kickstart.py
+--- livecd-tools-livecd-tools-23.4.orig/imgcreate/kickstart.py	2016-09-18 12:30:32.768524058 +0300
++++ livecd-tools-livecd-tools-23.4/imgcreate/kickstart.py	2016-09-18 12:32:06.130537933 +0300
+@@ -436,10 +436,11 @@
+             if network.nameserver:
+                 nameservers = network.nameserver.split(",")
+ 
+-        self.write_sysconfig(useipv6, hostname, gateway)
+-        self.write_hosts(hostname)
+-        self.write_hostname(hostname)
+-        self.write_resolv(nodns, nameservers)
++        if (ksnet.network):
++            self.write_sysconfig(useipv6, hostname, gateway)
++            self.write_hosts(hostname)
++            self.write_hostname(hostname)
++            self.write_resolv(nodns, nameservers)
+ 
+ class SelinuxConfig(KickstartConfig):
+     """A class to apply a kickstart selinux configuration to a system."""
+Binary files livecd-tools-livecd-tools-23.4.orig/imgcreate/.kickstart.py.swp and livecd-tools-livecd-tools-23.4/imgcreate/.kickstart.py.swp differ
