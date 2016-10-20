@@ -1,7 +1,7 @@
 Name:           livecd-tools
 Epoch:          1
 Version:        23.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Tools for building live CDs
 
 License:        GPLv2
@@ -25,7 +25,6 @@ Requires:       syslinux
 Requires:       syslinux-extlinux
 Requires:       dumpet
 Requires:       sssd-client
-Requires:       dkms-hfsplus
 
 BuildRequires:  python
 BuildRequires:  /usr/bin/pod2man
@@ -94,5 +93,8 @@ rm -rf %{buildroot}%{_datadir}/doc/
 
 
 %changelog
+* Thu Oct 20 2016 Jajauma's Packages <jajauma@yandex.ru> - 1:23.4-2
+- Don't require dkms-hfsplus
+
 * Sun Sep 18 2016 Jajauma's Packages <jajauma@yandex.ru> - 1:23.4-1
 - Public release
